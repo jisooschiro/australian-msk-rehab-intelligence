@@ -1,0 +1,17 @@
+[project]
+name = "australian-msk-rehab-intelligence"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "jisooschiro", email = "jisooschiro@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+australian-msk-rehab-intelligence = "australian_msk_rehab_intelligence:main"
+
+[build-system]
+requires = ["uv_build>=0.12.2,<0.13.0"]
+build-backend = "uv_build"
