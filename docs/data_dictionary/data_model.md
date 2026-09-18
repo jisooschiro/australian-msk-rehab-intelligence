@@ -28,7 +28,7 @@ A patient may have multiple treatment episodes over time. Each episode represent
 | primary_body_region | Primary body region being treated | Lumbar spine | category | - | No |
 | injury_mechanism | Broad mechanism associated with the condition | Work-related lifting | category | - | No |
 | occupation_group_at_start | Occupation group at the start of the episode | Healthcare worker | category | - | No |
-| physical_work_demand_at_start | Physical demand of the patient's work | Heavy | category | - | No |
+| physical_work_demand_at_start | Physical demand of the patient's work | Heavy | category | - | Yes |
 | referral_source | Source through which the patient entered the clinic | GP | category | - | No |
 | funding_source | Primary funding type for the episode | Workers Compensation | category | - | No |
 | episode_start_date | Date the treatment episode began | 2026-01-10 | date | - | No |
@@ -91,7 +91,7 @@ The scores are synthetic standardised measures created for this research prototy
 - `condition_group`: Low back pain, Neck pain, Shoulder condition, Elbow condition, Wrist or hand condition, Hip condition, Knee condition, Ankle or foot condition, Multiple regions, Other
 - `primary_body_region`: Cervical spine, Thoracic spine, Lumbar spine, Shoulder, Elbow, Wrist or hand, Hip, Knee, Ankle or foot, Multiple regions, Other
 - `injury_mechanism`: Lifting, Repetitive activity, Fall, Collision, Sports activity, Motor vehicle accident, Gradual onset, Other
-- `occupation_group_at_start`: Healthcare, Construction, Manufacturing, Transport, Office or administration, Retail or hospitality, Education, Trades, Other
+- `occupation_group_at_start`: Healthcare, Construction, Manufacturing, Transport, Office or administration, Retail or hospitality, Education, Trades, Not currently employed, Other
 - `physical_work_demand_at_start`: Sedentary, Light, Medium, Heavy, Very heavy
 - `referral_source`: GP, Specialist, Employer, Insurer, Self-referral, Other
 - `funding_source`: Private, Workers Compensation, CTP, Medicare, Other

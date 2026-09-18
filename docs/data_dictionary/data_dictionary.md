@@ -50,8 +50,8 @@ The `episodes` table stores each course of care provided to a patient for a prim
 | `condition_group` | Primary MSK condition category | category | Defined condition categories | Yes | - | Low back pain |
 | `primary_body_region` | Primary body region treated during the episode | category | Defined body-region categories | Yes | - | Lumbar spine |
 | `injury_mechanism` | Broad mechanism associated with the condition | category | Defined injury-mechanism categories | Yes | - | Lifting |
-| `occupation_group_at_start` | Patient's occupation group at the beginning of the episode | category | Defined occupation categories | Yes | - | Healthcare |
-| `physical_work_demand_at_start` | Physical demand of the patient's work at episode start | category | Sedentary, Light, Medium, Heavy, Very heavy | Yes | - | Heavy |
+| `occupation_group_at_start` | Patient's occupation group at the beginning of the episode | category | Healthcare, Construction, Manufacturing, Transport, Office or administration, Retail or hospitality, Education, Trades, Not currently employed, Other | Yes | - | Healthcare |
+| `physical_work_demand_at_start` | Physical demand of the patient's work at episode start | category | Sedentary, Light, Medium, Heavy, Very heavy, or null | No | - | Heavy |
 | `referral_source` | Source through which the patient entered the clinic | category | GP, Specialist, Employer, Insurer, Self-referral, Other | Yes | - | GP |
 | `funding_source` | Primary funding arrangement for the episode | category | Private, Workers Compensation, CTP, Medicare, Other | Yes | - | Workers Compensation |
 | `episode_start_date` | Date on which the treatment episode began | date | YYYY-MM-DD | Yes | - | 2026-01-10 |
@@ -59,6 +59,7 @@ The `episodes` table stores each course of care provided to a patient for a prim
 | `discharge_reason` | Reason why the treatment episode ended | category | Goals met, Self-discharged, Referred elsewhere, No further contact, Funding ended, Other | No | - | Goals met |
 | `rtw_status_at_start` | Return-to-work status at the start of treatment | category | Not working, Suitable duties, Reduced hours, Full duties | Yes | - | Not working |
 | `rtw_status_at_end` | Return-to-work status at the end of treatment | category | Not working, Suitable duties, Reduced hours, Full duties, or null | No | - | Full duties |
+
 
 ### Episode Validation Rules
 
@@ -70,6 +71,8 @@ The `episodes` table stores each course of care provided to a patient for a prim
 - If recorded, `episode_end_date` must be on or after `episode_start_date`.
 - `discharge_reason` and `rtw_status_at_end` may be null while treatment is ongoing.
 - A completed episode must have an `episode_end_date` and a `discharge_reason`.
+- `physical_work_demand_at_start` is required when the patient is employed.
+- `physical_work_demand_at_start` must be null when `occupation_group_at_start` is `Not currently employed`.
 
 ## 3. Appointments
 
