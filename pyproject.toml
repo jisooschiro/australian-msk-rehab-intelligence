@@ -7,7 +7,11 @@ authors = [
     { name = "jisooschiro", email = "jisooschiro@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.3",
+    "pandas>=3.0.6",
+]
 
 [project.scripts]
 australian-msk-rehab-intelligence = "australian_msk_rehab_intelligence:main"
